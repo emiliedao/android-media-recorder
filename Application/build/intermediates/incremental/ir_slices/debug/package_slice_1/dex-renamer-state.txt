@@ -1,0 +1,4 @@
+#Wed Aug 15 15:56:48 NZST 2018
+base.0=/Users/emilie/Documents/ENSEIRB/2A/Stage 2A/Auckland/VR/android-MediaRecorder-master/Application/build/intermediates/transforms/dexMerger/debug/103
+path.0=classes.dex
+renamed.0=classes.dex
