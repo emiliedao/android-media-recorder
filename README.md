@@ -1,73 +1,31 @@
+# Android Media Recorder
 
-Android MediaRecorder Sample
-===================================
+This app is based on [Google Android Media Recorder sample](https://github.com/googlesamples/android-MediaRecorder).
 
-This sample uses the camera/camcorder as the A/V source for the MediaRecorder API.
-A TextureView is used as the camera preview which limits the code to API 14+. This
-can be easily replaced with a SurfaceView to run on older devices.
+The purpose of the app is to record videos and send them to the IVS lab server.
 
-Introduction
-------------
-
-This sample shows how to use the [MediaRecorder][1] API.
-It uses the [Camera][2] as input source and displays a preview on a [TextureView][3]
-The sample features a button to capture the input and stop capturing afterwards.
-
-It demonstrates how to correctly gain control and release the camera.
-The sample also shows how to save the captured audio and video to persistant storage
-and basic error handling.
-
-
-[1]: https://developer.android.com/reference/android/media/MediaRecorder.html
-[2]: https://developer.android.com/reference/android/graphics/Camera.html
-[3]: https://developer.android.com/reference/android/view/TextureView.html
-
-Pre-requisites
---------------
+## Prerequisites
 
 - Android SDK 27
 - Android Build Tools v27.0.2
 - Android Support Repository
 
-Screenshots
--------------
+## Getting started
 
-<img src="https://raw.githubusercontent.com/googlesamples/android-MediaRecorder/master/screenshots/screnshot1.png" height="400" alt="Screenshot"/> <img src="https://raw.githubusercontent.com/googlesamples/android-MediaRecorder/master/screenshots/screnshot2.png" height="400" alt="Screenshot"/> 
+This app uses the Gradle build system. To build this project, import the project in Android Studio, build and run the app on an Android device.
 
-Getting Started
----------------
+## Videos
 
-This sample uses the Gradle build system. To build this project, use the
-"gradlew build" command or use "Import Project" in Android Studio.
+### Storage
 
-Support
--------
+The recorded videos are stored in your device external storage public directory, in a `CameraSample` folder created at runtime.
 
-- Google+ Community: https://plus.google.com/communities/105153134372062985968
-- Stack Overflow: http://stackoverflow.com/questions/tagged/android
+### Upload
 
-If you've found an error in this sample, please file an issue:
-https://github.com/googlesamples/android-MediaRecorder
+The videos are sent to http://www.ivs.auckland.ac.nz/quick_stereo/upload/videos/ public directory.
 
-Patches are encouraged, and may be submitted by forking this project and
-submitting a pull request through GitHub. Please see CONTRIBUTING.md for more details.
+## Media recorder package files
 
-License
--------
-
-Copyright 2017 The Android Open Source Project, Inc.
-
-Licensed to the Apache Software Foundation (ASF) under one or more contributor
-license agreements.  See the NOTICE file distributed with this work for
-additional information regarding copyright ownership.  The ASF licenses this
-file to you under the Apache License, Version 2.0 (the "License"); you may not
-use this file except in compliance with the License.  You may obtain a copy of
-the License at
-
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
-License for the specific language governing permissions and limitations under
-the License.
+- `MainActivity` is in charge of displaying a welcome message and recording videos.
+- `SendVideo` activity sends the video to the IVS lab server, through `Upload` class
+- `Upload` builds and sends the HTTP upload request to the server.
